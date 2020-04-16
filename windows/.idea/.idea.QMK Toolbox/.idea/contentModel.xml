@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\slavomir\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\slavomir\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_QMK Toolbox.585633979.00" t="ExcludeRecursive" />
+    <e p="C:\Users\slavomir\Repos\qmk_toolbox\common" t="Include">
+      <e p="applet-flash-samd51j18a.bin" t="Include" />
+      <e p="avrdude.conf" t="Include" />
+      <e p="mcu-list.txt" t="Include" />
+      <e p="reset.eep" t="Include" />
+    </e>
+    <e p="C:\Users\slavomir\Repos\qmk_toolbox\windows" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="QMK Toolbox" t="IncludeRecursive">
+        <e p=".qmk" t="Include" />
+        <e p="AboutBox.cs" t="Include" />
+        <e p="AboutBox.Designer.cs" t="Include" />
+        <e p="AboutBox.resx" t="Include" />
+        <e p="App.config" t="Include" />
+        <e p="avrdude.exe" t="Include" />
+        <e p="BetterComboBox.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="bootloadHID.exe" t="Include" />
+        <e p="dfu-programmer.exe" t="Include" />
+        <e p="dfu-util.exe" t="Include" />
+        <e p="drivers.txt" t="Include" />
+        <e p="Flashing.cs" t="Include" />
+        <e p="FodyWeavers.xml" t="Include" />
+        <e p="Helpers" t="Include">
+          <e p="EmbeddedResourceHelper.cs" t="Include" />
+        </e>
+        <e p="Info.cs" t="Include" />
+        <e p="libusb-1.0.dll" t="Include" />
+        <e p="libusb0.dll" t="Include" />
+        <e p="MainWindow.cs" t="Include" />
+        <e p="MainWindow.Designer.cs" t="Include" />
+        <e p="MainWindow.resx" t="Include" />
+        <e p="mdloader_windows.exe" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="output.ico" t="Include" />
+        <e p="packages.config" t="Include" />
+        <e p="Printing.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="app.manifest" t="Include" />
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="QMK Toolbox.csproj" t="IncludeRecursive" />
+        <e p="QMK Toolbox_TemporaryKey.pfx" t="Include" />
+        <e p="qmk_driver_installer.exe" t="Include" />
+        <e p="teensy_loader_cli.exe" t="Include" />
+        <e p="USB.cs" t="Include" />
+      </e>
+      <e p="QMK Toolbox.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
