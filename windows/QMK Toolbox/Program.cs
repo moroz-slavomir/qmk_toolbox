@@ -53,11 +53,18 @@ namespace QMK_Toolbox
                     var usb = new Usb(flasher, printer);
                     flasher.Usb = usb;
 
-                    ManagementObjectCollection collection;
-                    using (var searcher = new ManagementObjectSearcher(@"SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE ""USB%"""))
-                        collection = searcher.Get();
+                    do
+                    {
+                        Thread.Sleep(500);
 
-                    usb.DetectBootloaderFromCollection(collection);
+                        printer.Print("Waiting for device", MessageType.Info);
+                        ManagementObjectCollection collection;
+                        using (var searcher =
+                            new ManagementObjectSearcher(@"SELECT * FROM Win32_PnPEntity WHERE DeviceID LIKE ""USB%"""))
+                            collection = searcher.Get();
+
+                        usb.DetectBootloaderFromCollection(collection);
+                    } while (!usb.AreDevicesAvailable());
 
                     if (usb.AreDevicesAvailable())
                     {
@@ -90,7 +97,7 @@ namespace QMK_Toolbox
                     printer.PrintResponse(" - USBTiny (AVR Pocket)\n", MessageType.Info);
                     printer.PrintResponse(" - AVRISP (Arduino ISP)\n", MessageType.Info);
                     printer.PrintResponse(" - USBasp (AVR ISP)\n", MessageType.Info);
-                    printer.PrintResponse("usage: qmk_toolbox.exe <mcu> <filepath>", MessageType.Info);
+                    printer.PrintResponse("usage: qmk_toolbox.exe flash <mcu> <filepath>", MessageType.Info);
                     FreeConsole();
                     Environment.Exit(0);
                 }
@@ -110,20 +117,9 @@ namespace QMK_Toolbox
                 }
                 else
                 {
-                    // send our Win32 message to make the currently running instance
-                    // jump on top of all the other windows
-                    if (args.Length > 0)
-                    {
-                        using (var sw = new StreamWriter(Path.Combine(Path.GetTempPath(), "qmk_toolbox/file_passed_in.txt")))
-                        {
-                            sw.WriteLine(args[0]);
-                        }
-                    }
-                    NativeMethods.PostMessage(
-                        (IntPtr)NativeMethods.HwndBroadcast,
-                        NativeMethods.WmShowme,
-                        IntPtr.Zero,
-                        IntPtr.Zero);
+                    AttachConsole(AttachParentProcess);
+                    var printer = new Printing();
+                    printer.Print("Instance of QMK Toolbox is already running.", MessageType.Error);
                 }
             }
         }
