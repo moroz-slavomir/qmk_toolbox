@@ -120,6 +120,8 @@ namespace QMK_Toolbox
                     AttachConsole(AttachParentProcess);
                     var printer = new Printing();
                     printer.Print("Instance of QMK Toolbox is already running.", MessageType.Error);
+                    FreeConsole();
+                    Environment.Exit(1);
                 }
             }
         }
